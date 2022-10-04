@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Pizze";
+}
+
+@model List<Pizza>
+
+<h1 class="text-center py-4">Le nostre Pizze</h1>
+
+@if(Model.Count > 0) {
+    <ul class="list-group flex-row">
+        @foreach (Pizza pizza in Model)
+        {
+            <li class="card my-3 me-3" style="width: 23rem;">
+                <img src="~/img/@pizza.Image" class="card-img-top" style="height:15rem;">
+                <div class="card-body">
+                    <h2 class="card-title">Pizza @pizza.Name</h2>
+                    <p class="card-text">Descrizione: @pizza.Description</p>
+                    <span>Prezzo: € @pizza.Price</span>
+                </div>
+            </li>
+        }
+    </ul>
+} else {
+    <h2 class="text-center py-3">Siamo spiacenti ma attualmente non è disponibile alcuna pizza... Riprova più tardi</h2>
+}

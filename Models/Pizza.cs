@@ -1,6 +1,6 @@
 ﻿namespace la_mia_pizzeria_static.Models
 {
-    public class PizzaModel
+    public class Pizza
     {
         private static int idCounter = 0;
 
@@ -10,9 +10,9 @@
         public string Image { get; private set; }
         public float Price { get; private set; }
 
-        public PizzaModel(string name, string description, string image, double price)
+        public Pizza(string name, string description, string image, double price)
         {
-            Id = PizzaModel.idCounter++;
+            Id = Pizza.idCounter++;
             Name = name;
             Description = description;
             Image = image;
