@@ -13,7 +13,7 @@ namespace la_mia_pizzeria_static.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int id = -1)
         {
             List<Pizza> pizzaList = new List<Pizza>();
 
@@ -24,6 +24,11 @@ namespace la_mia_pizzeria_static.Controllers
             pizzaList.Add(firstPizza);
             pizzaList.Add(secondPizza);
             pizzaList.Add(thirdPizza);
+
+            if (id != -1)
+            {
+                return View("Show", pizzaList[id]);
+            }
 
             return View(pizzaList);
         }
