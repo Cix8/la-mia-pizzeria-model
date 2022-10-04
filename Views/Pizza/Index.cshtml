@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h2 class="card-title">Pizza @pizza.Name</h2>
                     <span class="d-block pb-3">Prezzo: € @pizza.Price</span>
-                    <a href="@Url.Action("Index", "Pizza", new {id = Model.IndexOf(pizza)})" class="btn btn-primary">Visualizza dettaglio pizza</a>
+                    <a href="@Url.Action("Details", "Pizza", new {id = Model.IndexOf(pizza)})" class="btn btn-primary">Visualizza dettaglio pizza</a>
                 </div>
             </li>
         }

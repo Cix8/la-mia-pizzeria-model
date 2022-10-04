@@ -13,7 +13,7 @@ namespace la_mia_pizzeria_static.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(int id = -1)
+        public IActionResult Index()
         {
             List<Pizza> pizzaList = new List<Pizza>();
 
@@ -25,12 +25,22 @@ namespace la_mia_pizzeria_static.Controllers
             pizzaList.Add(secondPizza);
             pizzaList.Add(thirdPizza);
 
-            if (id != -1)
-            {
-                return View("Show", pizzaList[id]);
-            }
-
             return View(pizzaList);
+        }
+
+        public IActionResult Details(int id)
+        {
+            List<Pizza> pizzaList = new List<Pizza>();
+
+            Pizza firstPizza = new Pizza("Margherita", "La classica pizza napoletana", "pizza-margherita.jfif", 5.99);
+            Pizza secondPizza = new Pizza("Capricciosa", "La pizza capricciosa è una pizza tipica della cucina italiana caratterizzata da un condimento di pomodoro, mozzarella, prosciutto cotto, funghi, olive verdi e nere, e carciofini", "pizza-capricciosa.jfif", 7.99);
+            Pizza thirdPizza = new Pizza("Salame Piccante", "Pizza base margherita con aggiunta di salame piccante", "pizza-salame.jfif", 6.99);
+
+            pizzaList.Add(firstPizza);
+            pizzaList.Add(secondPizza);
+            pizzaList.Add(thirdPizza);
+
+            return View("Show", pizzaList[id]);
         }
 
         public IActionResult Privacy()
